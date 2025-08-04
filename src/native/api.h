@@ -5,7 +5,7 @@ extern "C" {
 #endif
 #include <stddef.h>
 
-#if defined(__wasm__)
+#if defined(__wasm__) && !defined(__wasi__)
 #define LLHTTP_EXPORT __attribute__((visibility("default")))
 #elif defined(_WIN32)
 #define LLHTTP_EXPORT __declspec(dllexport)
